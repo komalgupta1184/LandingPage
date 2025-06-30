@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<section id="signup" class="signup-section">
+  <h2>Create Your Account</h2>
+  <form class="signup-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <button type="submit">Create Account</button>
+  </form>
+  <p id="signupSuccess" style="display:none; color: green; margin-top: 10px;">
+    ✅ Account created successfully!
+  </p>
+</section>
+<script>
+  const signupForm = document.querySelector('.signup-form');
+  const signupMsg = document.getElementById('signupSuccess');
+
+  signupForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop page from reloading
+    signupMsg.style.display = 'block';
+    signupForm.reset();
+
+    setTimeout(() => {
+      signupMsg.style.display = 'none';
+    }, 3000);
+  });
+</script>
+
+<body>
+
+  <header>
+    <h1>My Product</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to My Product</h2>
+    <p>This is a sample landing page.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Product. All rights reserved.</p>
+  </footer>
+<script>
+  const form = document.getElementById("contactForm");
+  const successMsg = document.getElementById("successMessage");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop the page from refreshing
+
+    // Optional: Get input values (just to simulate)
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (name && email && message) {
+      // Simulate sending message
+      successMsg.style.display = "block";
+
+      // Optionally clear form
+      form.reset();
+
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 3000);
+    }
+  });
+</script>
+
+</body>
+</html>
+<section id="about">
+  <h2>About Us</h2>
+  <div class="about-container">
+    <p>
+      We’re a passionate team building smart, simple, and scalable solutions for your everyday problems.
+      With a mission to make technology more accessible, our products are designed for both individuals and businesses.
+    </p>
+    <p>
+      Founded in 2025, we’ve helped thousands of users improve their workflows, productivity, and satisfaction.
+    </p>
+  </div>
+</section>
+
+
+<section id="features">
+  <h2>Why Choose Us?</h2>
+  <div class="feature-list">
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" width="60" alt="Speed">
+      <h3>Fast Performance</h3>
+      <p>Our product delivers blazing-fast results with optimized performance.</p>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" width="60" alt="Secure">
+      <h3>Top Security</h3>
+      <p>Your data is protected with end-to-end encryption and secure layers.</p>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/159/159078.png" width="60" alt="Support">
+      <h3>24/7 Support</h3>
+      <p>Need help? Our support team is here for you anytime, anywhere.</p>
+    </div>
+  </div>
+</section>
+<section id="testimonials">
+  <h2>What Our Users Say</h2>
+  <div class="testimonial">
+    <p>"This product is amazing! I use it every day!"</p>
+    <p>- User A</p>
+  </div>
+  <div class="testimonial">
+    <p>"Highly recommended for everyone!"</p>
+    <p>- User B</p>
+  </div>
+</section>
+<section class="cta">
+  <h2>Ready to Get Started?</h2>
+  <p>Join us today and experience the difference.</p>
+  <a href="#signup" class="btn">Sign Up Now</a>
+
+</section>
+
+  <section id="contact">
+  <h2>Contact Us</h2>
+  <p>Have questions or feedback? We'd love to hear from you!</p>
+  
+ <form id="contactForm" class="contact-form">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <input type="tel" id="phone" placeholder="Your Contact Number" maxlength="10" pattern="[0-9]{10}" required>
+  <textarea id="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+<input type="tel" id="phone" ... pattern="[0-9]{10}" maxlength="10">
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop the form from reloading
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Check if phone number is valid
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+      alert("Please enter a valid 10-digit contact number.");
+      return;
+    }
+
+    // If all fields are valid, show a popup
+    alert("✅ Your message has been sent successfully!");
+
+    // Optionally clear the form
+    form.reset();
+  });
+</script>
+
+  
+  <p id="successMessage" style="display:none; color: green; margin-top: 10px;">✅ Message sent successfully!</p>
+</section>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<a href="#features">Features</a>
+<a href="#contact">Contact</a>
+<a href="#about">About</a>
+<section id="pricing">
+  <h2>Our Pricing</h2>
+  <div class="pricing-plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <p>$0 / month</p>
+      <ul>
+        <li>Basic Features</li>
+        <li>1 Project</li>
+        <li>Community Support</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+    <div class="plan">
+      <h3>Pro</h3>
+      <p>$19 / month</p>
+      <ul>
+        <li>All Features</li>
+        <li>Unlimited Projects</li>
+        <li>Priority Support</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+    <div class="plan">
+      <h3>Enterprise</h3>
+      <p>Custom</p>
+      <ul>
+        <li>Custom Features</li>
+        <li>Team Access</li>
+        <li>Dedicated Support</li>
+      </ul>
+      <a href="#" class="btn">Contact Us</a>
+    </div>
+  </div>
+</section>
+<section id="stats">
+  <h2>Our Achievements</h2>
+  <div class="stats-container">
+    <div class="stat">
+      <h3>10K+</h3>
+      <p>Happy Users</p>
+    </div>
+    <div class="stat">
+      <h3>500+</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="stat">
+      <h3>98%</h3>
+      <p>Customer Satisfaction</p>
+    </div>
+  </div>
+</section>
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <h4>How do I sign up?</h4>
+      <p>Just click the "Sign Up" button and fill in your details to get started!</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I cancel anytime?</h4>
+      <p>Yes, you can cancel your subscription at any time from your dashboard.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is there a refund policy?</h4>
+      <p>Yes, we offer a 7-day money-back guarantee for all new users.</p>
+    </div>
+  </div>
+</section>
+<section id="gallery">
+  <h2>Product Gallery</h2>
+  <div class="gallery-container">
+    <img src="https://via.placeholder.com/300x200" alt="Screenshot 1" />
+    <img src="https://via.placeholder.com/300x200" alt="Screenshot 2" />
+    <img src="https://via.placeholder.com/300x200" alt="Screenshot 3" />
+  </div>
+</section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#features">Features</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#stats">Stats</a>
+  <a href="#faq">FAQ</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
+
